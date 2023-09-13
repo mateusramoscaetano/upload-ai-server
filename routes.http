@@ -1,0 +1,46 @@
+# @name get-prompts
+
+GET http://localhost:3333/prompts
+
+###
+
+# @name post-videos
+
+POST http://localhost:3333/videos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="1.mp3"
+Content-Type: audio/mpeg
+
+< ./1.mp3
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name post-transcription
+
+POST http://localhost:3333/videos/14ac9589-722c-41b2-bfde-8f29b3d211d1/transcription
+Content-Type: application/json
+
+{
+  "prompt":"guerra , stalin , segunda guerra"
+}
+
+
+###
+
+# @name generate
+
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+  "videoId":"14ac9589-722c-41b2-bfde-8f29b3d211d1",
+  "temperature":0.5,
+  "template":" gere um resumo sucinto da transcrição do video informadoa seguir: ''' {transcription} '''"
+}
+
+
+
