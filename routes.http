@@ -39,7 +39,7 @@ Content-Type: application/json
 {
   "videoId":"14ac9589-722c-41b2-bfde-8f29b3d211d1",
   "temperature":0.5,
-  "template":" gere um resumo sucinto da transcrição do video informadoa seguir: ''' {transcription} '''"
+  "prompt":" gere um resumo sucinto da transcrição do video informadoa seguir: ''' {transcription} '''"
 }
 
 
