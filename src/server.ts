@@ -8,12 +8,6 @@ import { generateAiCompletionRoute } from "./routes/generate-ai-completion";
 
 const app = fastify();
 
-app.register(require("fastify-supabase"), {
-  supabaseKey:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllaXlzeG5nYWd4cGpyYmJ0ZHZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQ1NTgyMDcsImV4cCI6MjAxMDEzNDIwN30.2DrMSek65LMAc-tXWoFFAUF_f9ohokloENnbQtsxzUk",
-  supabaseUrl: "https://ieiysxngagxpjrbbtdve.supabase.co",
-});
-
 app.register(fastifyCors, {
   origin: "*",
 });
